@@ -3,37 +3,24 @@
 //parameter wird hier nicht benätigt
 function addOption(el) {
 
-
-
-    
-    var closingElement = document.createElement("div");
+     var closingElement = document.createElement("div");
     closingElement.className = "closingelement";
-    closingElement.innerHTML = "x";
+    closingElement.innerHTML ="x";
 
 
     var newElement = document.createElement("div");
-    var newElementText = document.createTextNode($("#querynodesinputfield").val());
-
-
-    if ($("#querynodesinputfield").val() == "") {
-        alert("Bitte benennen Sie das Datenbankfeld!");
-        return;
-    } 
-
-    newElement.appendChild(newElementText);
-    //  newElement.innerHTML = $("#querynodesinputfield").val();
+    newElement.innerHTML = generateRandomText();
+    newElement.className ="cloudoption";
     
-    newElement.className = "cloudoption";
-
 
     newElement.appendChild(closingElement);
 
-    var element = document.getElementById("selected_Querynodes");
+    var element = document.getElementById("options");
+    
+   element.appendChild(newElement);
 
-    element.appendChild(newElement);
-
-
-    initRemovingElement();
+  
+   initRemovingElement();
 }
 
 
